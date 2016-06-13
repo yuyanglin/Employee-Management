@@ -1,0 +1,39 @@
+<ul class="personal-info">
+	<li class="first-li">
+		<div class="row">
+			<div class="col-md-2 picture">
+				<img src="{{ guy.pictureLink }}" class="img-circle img-responsive">
+			</div>
+			<div class="col-md-10 name-title">
+				<p class="name">{{ guy.name }}</p>
+				<p class="title"><em>{{ guy.title }}</em></p>					
+			</div>
+		</div>
+	</li>
+	<li>
+		<p class="col-title">Sex</p>
+		<p class="content"><em>{{ guy.sex }}</em></p>
+	</li>
+	<li>
+		<p class="col-title">Age</p>
+		<p class="content">{{ guy.age }}</p>
+	</li>
+	<li>
+		<p class="col-title">View Manager</p>
+		<p class="content btn" ng-click="getManager(guy.manager)" style="font-size:20px;">{{ guy.manager }}</p>		
+	</li>
+	<li>
+		<p class="col-title">View Direct Reports</p>
+		<p class="content" ng-click="setManager(guy.name)">
+			<a href="#/childrenList">{{ guy.children.length }}</a>
+		</p>		
+	</li>
+	<li>
+		<p class="col-title">Call</p>
+		<p class="content"><a href="tel:{{ guy.phoneNum }}">{{ guy.phoneNum }}</a></p>
+	</li>
+	<li class="last-li">
+		<p class="col-title">Email</p>
+		<p class="content"><a href="mailto:{{ guy.email }}">{{ guy.email }}</a></p>
+	</li>
+</ul>

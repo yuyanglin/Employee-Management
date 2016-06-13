@@ -1,0 +1,28 @@
+<ul>
+	<li ng-repeat="employee in employees | filter : searchInput">
+		<div class="row">
+			<div class="col-md-2 picture">
+				<img src="{{ employee.pictureLink }}" class="img-circle img-responsive">
+			</div>
+			<div class="col-md-6 name-title">
+				<p class="name" ng-click="setCurrentGuy(employee.id)"><a href="#/personalInfo">{{ employee.name }}</a></p>
+				<p class="title"><em>{{ employee.title }}</em></p>					
+			</div>
+			<div class="col-md-4 number-goto">
+				<a href="#/childrenList" ng-if="employee.reportNum !== 0">
+					<p ng-click="setManager(employee.name)">{{ employee.reportNum }}</p>
+				</a>
+				<p ng-if="employee.reportNum === 0">{{ employee.reportNum }}</p>
+
+				<a href="#/edit">
+					<p class="glyphicon glyphicon-pencil" ng-click="setCurrentGuy(employee.id)"></p>
+				</a>
+				<a href="#/personalInfo">
+					<p class="glyphicon glyphicon-search" ng-click="setCurrentGuy(employee.id)"></p>
+				</a>				
+				<p class="glyphicon glyphicon-remove"></p>
+			</div>
+		</div>
+	</li>
+</ul>
+

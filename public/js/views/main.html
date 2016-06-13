@@ -1,0 +1,30 @@
+<ul infinite-scroll='loadMore()' infinite-scroll-distance='0'>
+	<li ng-repeat="employee in employeePresent | filter : searchInput">
+		<div class="row">
+			<div class="col-md-2 picture">
+				<img src="{{ employee.pictureLink }}" class="img-circle img-responsive">
+			</div>
+			<div class="col-md-6 name-title">
+				<p class="name" ng-click="setCurrentGuy(employee.id)"><a href="#/personalInfo">{{ employee.name }}</a></p>
+				<p class="title"><em>{{ employee.title }}</em></p>					
+			</div>
+			<div class="col-md-4 number-goto">
+				<a href="#/childrenList" ng-if="employee.children.length !== 0">
+					<p ng-click="setManager(employee.name)">{{ employee.children.length }}</p>
+				</a>
+				<p ng-if="employee.children.length === 0">{{ employee.children.length }}</p>
+
+				<a href="#/edit">
+					<p class="glyphicon glyphicon-pencil" ng-click="setCurrentGuy(employee.id)"></p>
+				</a>
+				<a href="#/personalInfo">
+					<p class="glyphicon glyphicon-search" ng-click="setCurrentGuy(employee.id)"></p>
+				</a>
+				<a href="#/">
+					<p class="glyphicon glyphicon-remove"  ng-click="deleteEmployee(employee)"></p>
+				</a>	
+			</div>
+		</div>
+	</li>
+</ul>
+

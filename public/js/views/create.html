@@ -1,0 +1,41 @@
+<form class="create-form">
+	<div class="row">
+		<div class="col-md-6">
+			<label>Name:</label>
+			<input type="text" ng-model="name" placeholder="Name">
+			<br>
+			<label>Title:</label>
+			<input type="text" ng-model="title" placeholder="Title">
+			<br>
+			<label>Sex:</label>
+			<input type="text" ng-model="sex" placeholder="Sex">
+			<br>
+			<label>Age:</label>
+			<input type="number" ng-model="age" placeholder="Age">
+			<br>
+		</div>
+		<div class="col-md-6">
+			<label>Phone Number:</label>
+			<input type="text" ng-model="phoneNum" placeholder="Phone Number">
+			<br>
+			<label>Email:</label>
+			<input type="text" ng-model="email" placeholder="Email">
+			<br>
+			<label>Manager:</label>
+			
+			<select ng-model="manager" ng-click="setManager()">
+			  <option ng-repeat="employee in employees" value="{{employee.name}}">{{employee.name}}</option>
+			</select>
+
+			<br><br><br>
+			<label>Picture:</label>
+			<input type="file" file-model="myFile"/>
+    		<button ng-click="uploadFile()">upload me</button>
+		</div>
+	</div>
+
+	<div class="btn btn-success save-btn" ng-click="saveChange()">
+		<a href="#/" style="text-decoration: none;">Save Information</a>
+	</div>
+</form>
+

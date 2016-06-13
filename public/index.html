@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee Management</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- Include the core AngularJS library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <!-- Include the AngularJS routing library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+
+	<script type='text/javascript' src='https://raw.githubusercontent.com/sroze/ngInfiniteScroll/master/build/ng-infinite-scroll.min.js'></script>
+</head>
+
+<body ng-app="myApp" ng-controller="MainController">
+	<div class="header navbar-fixed-top">
+		<div class="container">
+			<a href="#/">Employee Management</a>
+			<ul>
+				<li><a href="#/create">Create New Employee</a></li>
+				<li><a href="#/">Search:</a></li>
+			</ul>
+			<form class="search-place">
+	            <input type="text" ng-model="searchInput" placeholder="Start Search"></input>
+	        </form>
+		</div>
+	</div>
+	
+	<div class="list">
+		<div class="container">
+			<ng-view></ng-view>	
+		</div>
+	</div>
+
+	<div class="footer navbar-fixed-bottom">
+		<div class="container">
+			<p>Copyright Yu-Yang Lin 2016</p>
+		</div>
+	</div>
+
+	<!-- Scripts -->
+	<script src="js/app.js"></script>
+	<script src="js/services/employeeService.js"></script>
+
+	<!-- Controllers -->
+	<script src="js/controllers/MainController.js"></script>
+	<script src="js/controllers/PersonalInfoController.js"></script>
+	<script src="js/controllers/ChildrenListController.js"></script>
+	<script src="js/controllers/CreateController.js"></script>
+	<script src="js/controllers/EditController.js"></script>
+
+	<script src="js/directives/fileModel.js"></script>
+
+	<!-- Views -->
+</body>
+</html>
